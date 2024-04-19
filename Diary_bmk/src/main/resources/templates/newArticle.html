@@ -25,6 +25,7 @@
             <textarea class="form-control h-25" rows="10" placeholder="내용" id="content" th:text="${Diary.content}"></textarea>
           </section>
           <!-- id가 있을 때는 [수정] 버튼을, 없을 때는 [등록] 버튼이 보이게 함 -->
+          <button th:if="${Diary.id} != null" type="button" id="delete-btn" class="btn btn-primary btn-sm">삭제</button>
           <button th:if="${Diary.id} != null" type="button" id="modify-btn" class="btn btn-primary btn-sm">수정</button>
           <button th:if="${Diary.id} == null" type="button" id="create-btn" class="btn btn-primary btn-sm">등록</button>
         </article>

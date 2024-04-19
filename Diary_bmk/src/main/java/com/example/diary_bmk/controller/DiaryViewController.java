@@ -30,7 +30,7 @@ public class DiaryViewController {
     }
 
     @GetMapping("/diarys/{id}")
-    public String getDiary(@PathVariable Long id, Model model){
+    public String updateDiary(@PathVariable Long id, Model model){
         Diary diary = diaryService.findById(id);
         model.addAttribute("Diary", new DiaryViewResponse(diary));
 
@@ -38,7 +38,7 @@ public class DiaryViewController {
     }
 
     @GetMapping("/new-article")
-    public String newArticle(@RequestParam(required = false) Long id, Model model){
+    public String getDiary(@RequestParam(required = false) Long id, Model model){
         if(id == null){
             model.addAttribute("Diary", new DiaryViewResponse());
         } else{
